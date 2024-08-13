@@ -1,0 +1,25 @@
+<h4>Friends:</h4>
+<ion-row style="height:50%; overflow: auto">
+  <ion-col>
+    <ion-list>
+      <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+        <ion-reorder *ngFor="let user of users">
+          <ion-item class="ion-text-center">
+            <ion-col>
+              <ion-input [value]="user.name" readonly></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-input [value]="user.productName" readonly></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-input [value]="user.amount" readonly></ion-input>
+            </ion-col>
+          </ion-item>
+        </ion-reorder>
+      </ion-reorder-group>
+    </ion-list>
+    <ion-infinite-scroll>
+      <ion-infinite-scroll-content loadingText="Please wait..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-col>
+</ion-row>

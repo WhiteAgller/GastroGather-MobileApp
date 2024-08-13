@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()">Zavřít</ion-button>
+    </ion-buttons>
+    <ion-title>Nový produkt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list style="display: flex; flex-direction: column">
+  <ion-item>
+    <ion-input
+      fill="solid"
+      label="Název produktu"
+      labelPlacement="stacked"
+      type="text"
+      placeholder="Enter product name"
+      [(ngModel)]="name"
+    ></ion-input>
+  </ion-item>
+    <div style="text-align: right; margin-top: 0.5rem">
+      <ion-button (click)="send()">
+        Add product
+        <ion-icon name="add-outline" slot="start"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-list>
+</ion-content>
+

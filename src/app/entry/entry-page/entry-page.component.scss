@@ -1,0 +1,46 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  width: 100%;
+  height: 60%;
+  margin-bottom: 20px;
+  background-color: #ffffff; /* Placeholder color for the logo area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons{
+  margin-top: auto;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.auth-buttons {
+  width: 100%;
+}
+
+.auth-button {
+  width: 100%;
+}
+

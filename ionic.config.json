@@ -1,0 +1,7 @@
+{
+  "name": "gastro-gather",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

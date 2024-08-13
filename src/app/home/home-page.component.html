@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <div style="display: flex; align-items: center">
+        <div>
+          <span style="font-family: 'Roboto'; font-size: 30px">Domů</span>
+        </div>
+        <div style="display:flex; margin-left: auto">
+          <ion-button fill="clear" (click)="redirectToProfile()">
+            <ion-icon name="person-circle-outline" style="font-size: 60px"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">History</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid style="display: flex; flex-direction: column; text-align: center">
+    <ion-row class="ion-justify-content-center">
+      <ion-list style="display: flex; flex-direction: column">
+        <div class="eventTable" style="display: flex; flex-direction: row; text-align: center" *ngFor="let history of historyTableEvents; index as i">
+          <div class="eventTable-info">
+            <ion-item class="ion-text-center" (click)="openEventDetailModal(i)">
+              <ion-col>
+                <ion-input [value]="history.name" readonly></ion-input>
+              </ion-col>
+            </ion-item>
+          </div>
+          <div class="eventTable-buttons" style="display: flex; flex-direction: row">
+            <ion-col>
+            </ion-col>
+            <ion-col>
+              <ion-button style="padding-bottom: 5px">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </div>
+        </div>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

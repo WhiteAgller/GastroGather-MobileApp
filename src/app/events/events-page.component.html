@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Události
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Events</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid style="display: flex; flex-direction: column; text-align: center; height: 100%; overflow: auto">
+    <ion-row style="display: flex; flex-direction: row">
+      <ion-searchbar show-clear-button="focus" animated="true" placeholder="Hledat" (ionInput)="filterData($event)"></ion-searchbar>
+    </ion-row>
+    <ion-row style=" overflow: auto; flex: 1;" class="ion-justify-content-center">
+      <ion-list style="display: flex; flex-direction: column; flex: 1;">
+        <div class="event" style="display: flex; flex-direction: row; text-align: center" *ngFor="let event of filterResult; index as i">
+          <div class="event-info">
+            <ion-card class="ion-text-center" (click)="openCounter(i)" style="display:flex; flex-direction: row;">
+              <ion-col size="10">
+                <ion-card-header style="padding: 8px; display: flex; flex-direction: row">
+                  <ion-img style="width: 40px; height: 40px; margin-right: 1rem" src="../../assets/img/img4.png" alt="img1"></ion-img>
+                  <ion-card-title>{{ event.name }}</ion-card-title>
+                </ion-card-header>
+                <ion-card-content style="color: black; padding: 0">
+                  <div style="display: flex; flex-direction: row;">
+                    <ion-input style="font-size: 18px" [value]="event.date | dateEvent" readonly></ion-input>
+                    <ion-input style="font-size: 18px" [value]="event.date | date:'H:MM'" readonly></ion-input>
+                  </div>
+                </ion-card-content>
+              </ion-col>
+              <ion-col size="2" style="justify-content: center; align-items: center; display: flex">
+                <ion-button class="event-more-options" (click)="openEventDetailModal(i, $event)">
+                  <ion-icon [style.color]="'black'" name="ellipsis-vertical"></ion-icon>
+                </ion-button>
+              </ion-col>
+            </ion-card>
+          </div>
+        </div>
+      </ion-list>
+    </ion-row>
+    <ion-row style="display: flex; justify-content: right">
+      <div style="margin-top: 0.5rem; margin-bottom: 1rem;">
+        <ion-button (click)="createNewEvent()" style="height: 50px" >
+          Vytvořit událost
+          <ion-icon name="add-outline" slot="start"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

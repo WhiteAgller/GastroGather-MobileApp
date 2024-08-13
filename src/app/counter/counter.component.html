@@ -1,0 +1,59 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <div style="display:flex; flex-direction: row">
+    <ion-button style="width: fit-content; --background: transparent" (click)="close()">
+        <ion-icon class="header-button--icon" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+      <ion-title class="ion-text-center" style="max-width: 60%">
+        {{ activeEvent.name }}
+      </ion-title>
+    <ion-button style="width: fit-content; --background: transparent; margin-left: auto">
+      <ion-icon class="header-button--icon" name="receipt-outline"></ion-icon>
+    </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid style="display: flex; flex-direction: column; height: 100%; justify-content: space-around">
+    <ion-row style="height: 50%;" class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="10">
+        <ion-list>
+          <ion-item>
+            <ion-col>
+              <ion-input style="font-size: 180px" class=ion-text-center [value]="selectedProduct?.amount" readonly></ion-input>
+              <ion-input style="font-size: 60px" class=ion-text-center [value]="selectedProduct?.name" readonly></ion-input>
+            </ion-col>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row style="height: 10%; display: flex; flex-direction: row; justify-content: space-around; ">
+      <ion-col size="3">
+        <ion-button>
+          <ion-icon size="large" name="people-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="openMenu()">
+          <ion-icon size="large" name="fast-food-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row style="height: 40%">
+      <ion-col size="6">
+        <ion-button (click)="decrease()">
+          <ion-icon style="font-size: 32px" name="remove-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button (click)="increase()">
+          <ion-icon style="font-size: 32px" name="add-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
