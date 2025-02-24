@@ -1,0 +1,12 @@
+<ion-refresher slot="fixed" (ionRefresh)="loadData($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+<ion-list>
+  <ion-item *ngFor="let item of dataSource; let index">
+    <ion-avatar slot="start">
+      <img src="./assets/img/img5.png" alt="avatar" />
+    </ion-avatar>
+    <ion-label>{{ getFormatedValue(item) }}</ion-label>
+    <ion-checkbox *ngIf="selectable"></ion-checkbox>
+  </ion-item>
+</ion-list>

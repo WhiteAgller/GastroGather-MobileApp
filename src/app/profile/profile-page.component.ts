@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {GenericOAuth2} from "@capacitor-community/generic-oauth2";
 import {IonButton, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar} from "@ionic/angular/standalone";
+import {IonPageHeaderComponent} from "../core/ion-page-header/ion-page-header.component";
+
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +14,8 @@ import {IonButton, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar} from "@
     IonIcon,
     IonTitle,
     IonToolbar,
-    IonContent
+    IonContent,
+    IonPageHeaderComponent
   ],
   standalone: true
 })
@@ -22,7 +25,7 @@ export class ProfilePage{
   refreshToken: string = "";
 
   onOAuthBtnClick() {
-    GenericOAuth2.authenticate({android:{}})
+    GenericOAuth2.authenticate({android:{appId: ""}, })
       .then(response => {
         this.accessToken = response['access_token']; // storage recommended for android logout
         this.refreshToken = response['refresh_token'];

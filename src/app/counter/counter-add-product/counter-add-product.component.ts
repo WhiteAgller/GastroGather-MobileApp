@@ -1,16 +1,14 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import { OverlayEventDetail } from '@ionic/core/components';
+import {Component} from '@angular/core';
 import {
   IonButton, IonButtons,
   IonContent,
   IonHeader, IonIcon, IonInput, IonItem, IonList,
-  IonModal,
   IonTitle,
   IonToolbar, ModalController
 } from "@ionic/angular/standalone";
 
 import {FormsModule} from "@angular/forms";
-import {IonicModule} from "@ionic/angular";
+
 
 export class newProduct {
   name: string = "";

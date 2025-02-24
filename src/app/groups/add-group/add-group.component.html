@@ -1,0 +1,5 @@
+<app-modal-ion-header name="Pozvat do skupiny"></app-modal-ion-header>
+<ion-content>
+  <app-list-view url="/User/GetAllFriends" showProperty="userName" [directive]="UsernamePipe" [selectable]="true"></app-list-view>
+  <app-ion-fab style="margin-bottom: calc(1rem + 56px)!important;" iconName="arrow-forward-outline"></app-ion-fab>
+</ion-content>

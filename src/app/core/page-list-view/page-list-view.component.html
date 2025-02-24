@@ -1,0 +1,11 @@
+<app-ion-tabs (onPageChange) = onPageChange($event) [pages]="IonTabsSetup" style="display: flex; height: 40px"></app-ion-tabs>
+<div *ngIf="currentComponent">
+  <ng-container *ngComponentOutlet="currentComponent"></ng-container>
+</div>
+<ion-fab style="margin-bottom: 1rem; margin-right: 1rem" slot="fixed" horizontal="end" vertical="bottom" >
+  <ion-fab-button (click)="proceed()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+

@@ -1,3 +1,21 @@
-<p>
-  login works!
-</p>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-button fill="clear" (click)="close()">
+      <ion-icon class="header-button--icon" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="login-container">
+    <h2>Přihlásit se</h2>
+    <ion-list [formGroup]="form">
+      <ion-item>
+        <ion-input formControlName="email" label-placement="floating" label="Email" type="email" placeholder="email@doména.cz"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlName="password" label-placement="floating" label="Heslo" type="password" placeholder="********"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="login()">Přihlásit se</ion-button>
+  </div>
+</ion-content>

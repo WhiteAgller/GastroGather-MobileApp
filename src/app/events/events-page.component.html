@@ -1,11 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Události
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-page-ion-header name="Události"></app-page-ion-header>
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -17,10 +10,11 @@
       <ion-searchbar show-clear-button="focus" animated="true" placeholder="Hledat" (ionInput)="filterData($event)"></ion-searchbar>
     </ion-row>
     <ion-row style=" overflow: auto; flex: 1;" class="ion-justify-content-center">
+      <ion-accordion-group>
       <ion-list style="display: flex; flex-direction: column; flex: 1;">
         <div class="event" style="display: flex; flex-direction: row; text-align: center" *ngFor="let event of filterResult; index as i">
           <div class="event-info">
-            <ion-card class="ion-text-center" (click)="openCounter(i)" style="display:flex; flex-direction: row;">
+            <ion-card class="ion-text-center" style="display:flex; flex-direction: row;">
               <ion-col size="10">
                 <ion-card-header style="padding: 8px; display: flex; flex-direction: row">
                   <ion-img style="width: 40px; height: 40px; margin-right: 1rem" src="../../assets/img/img4.png" alt="img1"></ion-img>
@@ -42,6 +36,7 @@
           </div>
         </div>
       </ion-list>
+      </ion-accordion-group>
     </ion-row>
     <ion-row style="display: flex; justify-content: right">
       <div style="margin-top: 0.5rem; margin-bottom: 1rem;">

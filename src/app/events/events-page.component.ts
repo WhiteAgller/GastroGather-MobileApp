@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Event} from "../Models/Event";
 import {DatePipe, NgForOf} from "@angular/common";
 import {
+  IonAccordion,
+  IonAccordionGroup,
   IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,
   IonCol,
   IonContent, IonFab, IonFabButton,
@@ -17,13 +19,14 @@ import {EventsDetailComponent} from "./events-detail/events-detail.component";
 import {CounterComponent} from "../counter/counter.component";
 import {DateEventPipe} from "../shared/pipes/date-event-pipe";
 import {CreateEventComponent} from "./create-event/create-event.component";
+import {IonPageHeaderComponent} from "../core/ion-page-header/ion-page-header.component";
 
 @Component({
   selector: 'app-events',
   templateUrl: 'events-page.component.html',
   styleUrls: ['events-page.component.scss'],
   standalone: true,
-  imports: [NgForOf, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonList, IonItem, IonCol, IonInput, IonButton, IonIcon, DatePipe, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonImg, IonSearchbar, DateEventPipe, IonFab, IonFabButton],
+  imports: [NgForOf, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonList, IonItem, IonCol, IonInput, IonButton, IonIcon, DatePipe, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonImg, IonSearchbar, DateEventPipe, IonFab, IonFabButton, IonPageHeaderComponent, IonAccordionGroup, IonAccordion],
 })
 export class EventsPage implements OnInit {
 

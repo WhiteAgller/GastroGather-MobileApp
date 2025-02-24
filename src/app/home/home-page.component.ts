@@ -15,6 +15,8 @@ import {
 } from "@ionic/angular/standalone";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {IonPageHeaderComponent} from "../core/ion-page-header/ion-page-header.component";
+
 
 @Component({
   selector: 'app-home',
@@ -33,7 +35,8 @@ import {Router} from "@angular/router";
     IonCol,
     IonInput,
     IonButton,
-    IonIcon
+    IonIcon,
+    IonPageHeaderComponent
   ],
   standalone: true
 })
@@ -42,12 +45,7 @@ export class HomePage implements OnInit {
   historyTableEvents: Event[] = [];
   constructor(private httpClient: HttpClient, private router: Router) { }
 
-  ngOnInit() {
-
-    let a = this.httpClient.get("https://localhost:7054/api/Table/AllByUserId?UserId=d4a8be1a-c8b6-4e4e-92d1-321cbbf93e89")
-      .subscribe(x => console.log(x));
-
-  }
+  ngOnInit() {}
 
   openEventDetailModal(i: number) {
     this.router.navigateByUrl("profile");

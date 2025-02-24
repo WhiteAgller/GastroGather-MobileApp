@@ -1,14 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import {IonicModule} from "@ionic/angular";
 import {Event} from "../../Models/Event";
-import {ModalController} from "@ionic/angular/standalone";
+import {
+  IonButton, IonButtons,
+  IonCol,
+  IonContent,
+  IonGrid,
+  IonHeader, IonIcon, IonInput, IonItem, IonLabel,
+  IonList,
+  IonRow,
+  IonTitle,
+  IonToolbar,
+  ModalController
+} from "@ionic/angular/standalone";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-events-detail',
   templateUrl: './events-detail.component.html',
   styleUrls: ['./events-detail.component.scss'],
   standalone: true,
-  imports: [IonicModule]
+  imports: [
+    NgForOf,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonList,
+    IonItem,
+    IonCol,
+    IonInput,
+    IonButton,
+    IonIcon,
+    IonLabel,
+    IonButtons
+  ],
 })
 export class EventsDetailComponent  implements OnInit {
 

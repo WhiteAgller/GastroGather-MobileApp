@@ -1,0 +1,16 @@
+<app-modal-ion-header name="Povat přítele"></app-modal-ion-header>
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="submit()" style="display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: column; margin: 0 0.5rem 0.5rem 0.5rem">
+      <ion-item class="input-text" style="margin: 0.5rem">
+        <ion-input
+          formControlName="username"
+          placeholder="Jméno#XXXX"
+        ></ion-input>
+      </ion-item>
+    <ion-button type="submit">
+      Přidat
+    </ion-button>
+    </div>
+  </form>
+</ion-content>

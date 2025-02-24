@@ -1,6 +1,24 @@
-<p>
-  This is test:
-  <ng-container>
-    {{test}}
-  </ng-container>
-</p>
+<app-page-ion-header name="Přátelé"></app-page-ion-header>
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="top" style="height: 30px; margin-top: 10px">
+      <ion-tab-button [selected]="yourFriendsSelected" (click)="selectTab('friends')">
+        <span>Vaši přátelé</span>
+      </ion-tab-button>
+      <ion-tab-button [selected]="yourRequestsSelected" (click)="selectTab('requests')">
+        <span>Žádosti o přátelství</span>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  <div *ngIf="yourFriendsSelected">
+    <app-your-friends></app-your-friends>
+  </div>
+  <div *ngIf="yourRequestsSelected">
+    <app-your-requests></app-your-requests>
+  </div>
+  <ion-fab style="margin-bottom: 1rem; margin-right: 1rem" slot="fixed" horizontal="end" vertical="bottom" >
+    <ion-fab-button (click)="inviteUserByUsername()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

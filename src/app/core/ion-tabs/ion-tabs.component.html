@@ -1,0 +1,9 @@
+<ion-tabs>
+  <ion-tab-bar slot="top" style="height: 40px">
+    <ng-container *ngFor="let button of pages; let i = index">
+    <ion-tab-button [selected]="i === currentSelectedTab" (click)="selectTab(i)">
+      <span>{{button.tabName}}</span>
+    </ion-tab-button>
+    </ng-container>
+  </ion-tab-bar>
+</ion-tabs>

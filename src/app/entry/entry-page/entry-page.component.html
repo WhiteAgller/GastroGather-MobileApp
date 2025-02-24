@@ -1,10 +1,8 @@
 <ion-header></ion-header>
 <ion-content [fullscreen]="true">
   <div class="login-container">
-    <!-- Logo Section -->
     <div class="logo">
-      <!-- Replace this comment with your logo -->
-      <img src="../../assets/icon/GastroGather.png" alt="Logo">
+        <img src="../../assets/icon/GastroGather.png" alt="Logo">
     </div>
     <div class="buttons">
       <div class="social-buttons">
@@ -18,8 +16,8 @@
       </div>
 
       <div class="auth-buttons">
-        <ion-button shape="round" fill="outline" class="auth-button">Přihlásit se</ion-button>
-        <ion-button shape="round" fill="outline" class="auth-button">Zaregistovat se</ion-button>
+        <ion-button shape="round" fill="outline" class="auth-button" (click)="login()">Přihlásit se</ion-button>
+        <ion-button shape="round" fill="outline" class="auth-button" (click)="register()">Zaregistovat se</ion-button>
       </div>
     </div>
   </div>
